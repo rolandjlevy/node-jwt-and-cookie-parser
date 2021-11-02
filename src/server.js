@@ -8,11 +8,11 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded( { extended:true }));
 
-const setupLoginRoute = require("./routes/login");
-const setupAddRoute = require("./routes/add");
+const loginRoute = require("./routes/login");
+const addRoute = require("./routes/add");
 
-setupLoginRoute(app);
-setupAddRoute(app);
+loginRoute(app);
+addRoute(app);
 
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "../public/index.html"));
